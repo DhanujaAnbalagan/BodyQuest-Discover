@@ -1,9 +1,19 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AudioProvider } from "./contexts/AudioContext";
+import { FocusProvider } from "./contexts/FocusContext";
 import Index from "./pages/Index";
+import InteractiveBodyMap from "./pages/InteractiveBodyMap";
+import SenseSimulator from "./pages/SenseSimulator";
+import EmotionMirror from "./pages/EmotionMirror";
+import MiniQuizzes from "./pages/MiniQuizzes";
+import ProgressTracker from "./pages/ProgressTracker";
+import ParentDashboard from "./pages/ParentDashboard";
+import ParentLogin from "./pages/ParentLogin";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -11,15 +21,25 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <AudioProvider>
+        <FocusProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/body-map" element={<InteractiveBodyMap />} />
+              <Route path="/senses" element={<SenseSimulator />} />
+              <Route path="/emotions" element={<EmotionMirror />} />
+              <Route path="/quizzes" element={<MiniQuizzes />} />
+              <Route path="/progress" element={<ProgressTracker />} />
+              <Route path="/parent-login" element={<ParentLogin />} />
+              <Route path="/parent-dashboard" element={<ParentDashboard />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </FocusProvider>
+      </AudioProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );
