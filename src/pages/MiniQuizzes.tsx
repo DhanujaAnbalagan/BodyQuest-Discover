@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -9,6 +8,8 @@ import { FocusToggle } from '@/components/FocusToggle';
 import { Home, Brain, Heart, Eye, Star } from 'lucide-react';
 import { BodyPartsQuiz } from '@/components/quizzes/BodyPartsQuiz';
 import { SensesQuiz } from '@/components/quizzes/SensesQuiz';
+import { EmotionQuiz } from '@/components/quizzes/EmotionQuiz';
+import { SuperQuiz } from '@/components/quizzes/SuperQuiz';
 
 type ActiveQuiz = 'body-parts' | 'senses' | 'emotions' | 'super' | null;
 
@@ -31,7 +32,8 @@ const MiniQuizzes: React.FC = () => {
       color: 'bg-soft-pink', 
       questions: '5 questions', 
       description: 'Test your body knowledge!',
-      available: true
+      available: true,
+      emoji: '💗'
     },
     { 
       id: 'senses' as const, 
@@ -40,7 +42,8 @@ const MiniQuizzes: React.FC = () => {
       color: 'bg-soft-blue', 
       questions: '5 questions', 
       description: 'How well do you know your senses?',
-      available: true
+      available: true,
+      emoji: '👁️'
     },
     { 
       id: 'emotions' as const, 
@@ -49,7 +52,8 @@ const MiniQuizzes: React.FC = () => {
       color: 'bg-soft-green', 
       questions: '4 questions', 
       description: 'Match feelings with faces!',
-      available: false
+      available: true,
+      emoji: '😊'
     },
     { 
       id: 'super' as const, 
@@ -58,7 +62,8 @@ const MiniQuizzes: React.FC = () => {
       color: 'bg-soft-yellow', 
       questions: '10 questions', 
       description: 'The ultimate body challenge!',
-      available: false
+      available: true,
+      emoji: '🌟'
     }
   ];
 
@@ -76,6 +81,60 @@ const MiniQuizzes: React.FC = () => {
     setActiveQuiz(null);
     playNarration("Great job completing the quiz! You can try another one or go back to exploring.");
   };
+
+  if (activeQuiz === 'emotions') {
+    return (
+      <div className="min-h-screen bg-warm-white p-4">
+        <div className="fixed top-4 left-4 z-50">
+          <Button onClick={() => setActiveQuiz(null)} variant="outline" className="bodyquest-button">
+            <Home size={20} className="mr-2" />
+            Back to Quizzes
+          </Button>
+        </div>
+
+        <div className="fixed top-4 right-4 z-50 flex gap-2">
+          <AudioControls />
+          <FocusToggle />
+        </div>
+
+        <div className="max-w-4xl mx-auto pt-20">
+          <div className="text-center mb-8">
+            <h1 className="text-4xl font-bold text-soft-green mb-4">
+              😊 Emotion Match 😊
+            </h1>
+          </div>
+          <EmotionQuiz onComplete={handleQuizComplete} />
+        </div>
+      </div>
+    );
+  }
+
+  if (activeQuiz === 'super') {
+    return (
+      <div className="min-h-screen bg-warm-white p-4">
+        <div className="fixed top-4 left-4 z-50">
+          <Button onClick={() => setActiveQuiz(null)} variant="outline" className="bodyquest-button">
+            <Home size={20} className="mr-2" />
+            Back to Quizzes
+          </Button>
+        </div>
+
+        <div className="fixed top-4 right-4 z-50 flex gap-2">
+          <AudioControls />
+          <FocusToggle />
+        </div>
+
+        <div className="max-w-4xl mx-auto pt-20">
+          <div className="text-center mb-8">
+            <h1 className="text-4xl font-bold text-soft-yellow mb-4">
+              🌟 Super Quiz 🌟
+            </h1>
+          </div>
+          <SuperQuiz onComplete={handleQuizComplete} />
+        </div>
+      </div>
+    );
+  }
 
   if (activeQuiz === 'body-parts') {
     return (
@@ -161,38 +220,27 @@ const MiniQuizzes: React.FC = () => {
             return (
               <Card 
                 key={quiz.id} 
-                className={`child-friendly ${quiz.color} cursor-pointer hover:scale-105 transition-all ${
-                  !quiz.available ? 'opacity-60' : ''
-                }`}
+                className={`child-friendly ${quiz.color} cursor-pointer hover:scale-105 transition-all`}
                 onClick={() => handleQuizSelect(quiz.id)}
               >
                 <CardContent className="p-8 text-center">
-                  <Icon size={64} className="mx-auto mb-4 text-white" />
-                  <h3 className="text-2xl font-bold text-white mb-2">{quiz.name}</h3>
-                  <p className="text-white text-lg mb-2">{quiz.description}</p>
-                  <p className="text-white/80 text-sm">{quiz.questions}</p>
-                  {!quiz.available && (
-                    <p className="text-white/90 text-sm mt-2 font-semibold">Coming Soon!</p>
-                  )}
+                  <div className="text-4xl mb-4">{quiz.emoji}</div>
+                  <Icon size={48} className="mx-auto mb-4 text-gray-700" strokeWidth={2.5} />
+                  <h3 className="text-2xl font-bold text-gray-700 mb-2">{quiz.name}</h3>
+                  <p className="text-gray-600 text-lg mb-2">{quiz.description}</p>
+                  <p className="text-gray-500 text-sm">{quiz.questions}</p>
                 </CardContent>
               </Card>
             );
           })}
         </div>
 
-        {/* Available vs Coming Soon Info */}
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* All Quizzes Available Info */}
+        <div className="mt-8">
           <Card className="child-friendly bg-soft-green/30">
             <CardContent className="p-6 text-center">
-              <h3 className="text-xl font-bold text-soft-purple mb-2">✅ Ready to Play!</h3>
-              <p className="text-gray-700">Body Parts Quiz and Senses Challenge are ready for you to enjoy!</p>
-            </CardContent>
-          </Card>
-          
-          <Card className="child-friendly bg-soft-yellow/30">
-            <CardContent className="p-6 text-center">
-              <h3 className="text-xl font-bold text-soft-purple mb-2">🚧 Coming Soon!</h3>
-              <p className="text-gray-700">More exciting quizzes are being created just for you!</p>
+              <h3 className="text-xl font-bold text-soft-purple mb-2">🎉 All Quizzes Ready!</h3>
+              <p className="text-gray-700">All four exciting quizzes are now ready for you to enjoy and learn!</p>
             </CardContent>
           </Card>
         </div>

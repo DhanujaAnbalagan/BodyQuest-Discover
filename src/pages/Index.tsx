@@ -7,7 +7,7 @@ import { useAudio } from '@/contexts/AudioContext';
 import { useFocus } from '@/contexts/FocusContext';
 import { AudioControls } from '@/components/AudioControls';
 import { FocusToggle } from '@/components/FocusToggle';
-import { Heart, Eye, Ear, Hand, Brain, Star, Users, Volume2 } from 'lucide-react';
+import { Heart, Eye, Ear, Hand, Brain, Star, Users, Volume2, Gamepad2 } from 'lucide-react';
 
 const Index = () => {
   const navigate = useNavigate();
@@ -29,7 +29,8 @@ const Index = () => {
       icon: Heart,
       color: 'bg-soft-pink',
       route: '/body-map',
-      narration: 'Let\'s explore your amazing body! Click on different body parts to learn what they do.'
+      narration: 'Let\'s explore your amazing body! Click on different body parts to learn what they do.',
+      emoji: '🧍'
     },
     {
       id: 'senses',
@@ -38,7 +39,8 @@ const Index = () => {
       icon: Eye,
       color: 'bg-soft-blue',
       route: '/senses',
-      narration: 'Time to explore your five super senses! You can see, hear, touch, taste, and smell the world around you.'
+      narration: 'Time to explore your five super senses! You can see, hear, touch, taste, and smell the world around you.',
+      emoji: '👁️'
     },
     {
       id: 'emotions',
@@ -47,7 +49,18 @@ const Index = () => {
       icon: Brain,
       color: 'bg-soft-yellow',
       route: '/emotions',
-      narration: 'Let\'s learn about emotions and feelings! Happy, sad, excited - we all have different feelings.'
+      narration: 'Let\'s learn about emotions and feelings! Happy, sad, excited - we all have different feelings.',
+      emoji: '😊'
+    },
+    {
+      id: 'games',
+      title: 'Fun Games',
+      description: 'Play educational games!',
+      icon: Gamepad2,
+      color: 'bg-soft-purple',
+      route: '/games',
+      narration: 'Time to play fun games! Learn while you play with exciting challenges.',
+      emoji: '🎮'
     },
     {
       id: 'quizzes',
@@ -56,16 +69,18 @@ const Index = () => {
       icon: Star,
       color: 'bg-soft-green',
       route: '/quizzes',
-      narration: 'Ready for some fun quizzes? Let\'s see what you\'ve learned about your body!'
+      narration: 'Ready for some fun quizzes? Let\'s see what you\'ve learned about your body!',
+      emoji: '⭐'
     },
     {
       id: 'progress',
       title: 'My Progress',
       description: 'See your achievements!',
       icon: Users,
-      color: 'bg-soft-purple',
+      color: 'bg-gradient-to-br from-purple-400 to-pink-400',
       route: '/progress',
-      narration: 'Look at all the amazing things you\'ve learned! Check out your progress and collect stars.'
+      narration: 'Look at all the amazing things you\'ve learned! Check out your progress and collect stars.',
+      emoji: '🏆'
     }
   ];
 
@@ -134,13 +149,14 @@ const Index = () => {
                 }}
               >
                 <CardContent className="p-8 text-center">
-                  <div className="mb-4">
-                    <Icon size={64} className="mx-auto text-white sparkle" />
+                  <div className="mb-4 relative">
+                    <div className="text-4xl mb-2">{activity.emoji}</div>
+                    <Icon size={48} className="mx-auto text-gray-700 sparkle" strokeWidth={2.5} />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">
+                  <h3 className="text-2xl font-bold text-gray-700 mb-2">
                     {activity.title}
                   </h3>
-                  <p className="text-white text-lg font-medium">
+                  <p className="text-gray-600 text-lg font-medium">
                     {activity.description}
                   </p>
                 </CardContent>
