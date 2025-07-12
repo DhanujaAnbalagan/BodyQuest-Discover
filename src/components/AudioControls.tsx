@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Slider } from '@/components/ui/slider';
 import { useAudio } from '@/contexts/AudioContext';
-import { Volume2, VolumeX, Music, MusicOff } from 'lucide-react';
+import { Volume2, VolumeX, Music, MicOff } from 'lucide-react';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 
 export const AudioControls: React.FC = () => {
@@ -70,7 +70,7 @@ export const AudioControls: React.FC = () => {
               className="bodyquest-button text-sm min-h-8"
               aria-label={isMusicEnabled ? "Turn off background music" : "Turn on background music"}
             >
-              {isMusicEnabled ? <Music size={16} /> : <MusicOff size={16} />}
+              {isMusicEnabled ? <Music size={16} /> : <MicOff size={16} />}
             </Button>
           </div>
         </CardContent>

@@ -6,7 +6,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { useAudio } from '@/contexts/AudioContext';
 import { AudioControls } from '@/components/AudioControls';
 import { FocusToggle } from '@/components/FocusToggle';
-import { Home, Eye, Ear, Hand, Nose, Utensils } from 'lucide-react';
+import { Home, Eye, Ear, Hand, Smile, Utensils } from 'lucide-react';
 
 const SenseSimulator: React.FC = () => {
   const navigate = useNavigate();
@@ -20,7 +20,7 @@ const SenseSimulator: React.FC = () => {
     { name: 'Sight', icon: Eye, color: 'bg-soft-blue', description: 'See colors and shapes!' },
     { name: 'Hearing', icon: Ear, color: 'bg-soft-green', description: 'Listen to sounds!' },
     { name: 'Touch', icon: Hand, color: 'bg-soft-pink', description: 'Feel different textures!' },
-    { name: 'Smell', icon: Nose, color: 'bg-soft-yellow', description: 'Smell wonderful scents!' },
+    { name: 'Smell', icon: Smile, color: 'bg-soft-yellow', description: 'Smell wonderful scents!' },
     { name: 'Taste', icon: Utensils, color: 'bg-soft-purple', description: 'Taste yummy flavors!' }
   ];
 
