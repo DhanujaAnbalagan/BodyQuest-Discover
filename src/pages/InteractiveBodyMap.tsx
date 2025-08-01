@@ -9,13 +9,26 @@ import { AudioControls } from '@/components/AudioControls';
 import { FocusToggle } from '@/components/FocusToggle';
 import { Home } from 'lucide-react';
 
+// Import body part images
+import headImage from '@/assets/body-parts/head.jpg';
+import eyesImage from '@/assets/body-parts/eyes.jpg';
+import noseImage from '@/assets/body-parts/nose.jpg';
+import mouthImage from '@/assets/body-parts/mouth.jpg';
+import heartImage from '@/assets/body-parts/heart.jpg';
+import armsImage from '@/assets/body-parts/arms.jpg';
+import handsImage from '@/assets/body-parts/hands.jpg';
+import stomachImage from '@/assets/body-parts/stomach.jpg';
+import legsImage from '@/assets/body-parts/legs.jpg';
+import feetImage from '@/assets/body-parts/feet.jpg';
+
 interface BodyPart {
   id: string;
   name: string;
   description: string;
   funFact: string;
-  position: { x: number; y: number };
   narration: string;
+  image: string;
+  bgColor: string;
 }
 
 const InteractiveBodyMap: React.FC = () => {
@@ -30,93 +43,95 @@ const InteractiveBodyMap: React.FC = () => {
       name: 'Head',
       description: 'Your head holds your amazing brain!',
       funFact: 'Your brain has about 86 billion neurons - that\'s more than there are stars you can see in the sky!',
-      position: { x: 50, y: 15 },
-      narration: 'This is your head! It protects your wonderful brain, which helps you think, learn, and remember everything.'
+      narration: 'This is your head! It protects your wonderful brain, which helps you think, learn, and remember everything.',
+      image: headImage,
+      bgColor: 'bg-orange-100'
     },
     {
       id: 'eyes',
       name: 'Eyes',
       description: 'Your eyes help you see the world!',
       funFact: 'Your eyes can see millions of different colors, and they work like amazing cameras!',
-      position: { x: 47, y: 18 },
-      narration: 'These are your eyes! They help you see beautiful colors, read books, and watch your favorite shows.'
+      narration: 'These are your eyes! They help you see beautiful colors, read books, and watch your favorite shows.',
+      image: eyesImage,
+      bgColor: 'bg-blue-100'
     },
     {
       id: 'nose',
       name: 'Nose',
       description: 'Your nose helps you smell and breathe!',
       funFact: 'You can smell over 1 trillion different scents! Your nose is like a super detector.',
-      position: { x: 50, y: 20 },
-      narration: 'This is your nose! It helps you smell yummy food and beautiful flowers, and it helps you breathe too.'
+      narration: 'This is your nose! It helps you smell yummy food and beautiful flowers, and it helps you breathe too.',
+      image: noseImage,
+      bgColor: 'bg-pink-100'
     },
     {
       id: 'mouth',
       name: 'Mouth',
       description: 'Your mouth helps you eat, drink, and talk!',
       funFact: 'Your tongue has about 10,000 taste buds that help you taste sweet, salty, sour, and bitter flavors!',
-      position: { x: 50, y: 22 },
-      narration: 'This is your mouth! It helps you eat delicious food, drink water, and say wonderful words.'
-    },
-    {
-      id: 'chest',
-      name: 'Chest',
-      description: 'Your chest protects your heart and lungs!',
-      funFact: 'Your ribcage has 24 ribs that work like a protective cage for your important organs!',
-      position: { x: 50, y: 40 },
-      narration: 'This is your chest! It protects your heart and lungs, helping you breathe and stay alive.'
+      narration: 'This is your mouth! It helps you eat delicious food, drink water, and say wonderful words.',
+      image: mouthImage,
+      bgColor: 'bg-red-100'
     },
     {
       id: 'heart',
       name: 'Heart',
       description: 'Your heart pumps blood through your body!',
       funFact: 'Your heart beats about 100,000 times every day! It never takes a break.',
-      position: { x: 45, y: 38 },
-      narration: 'This is your heart! It works like a strong pump, sending blood to every part of your body to keep you healthy.'
+      narration: 'This is your heart! It works like a strong pump, sending blood to every part of your body to keep you healthy.',
+      image: heartImage,
+      bgColor: 'bg-red-200'
     },
     {
       id: 'arms',
       name: 'Arms',
       description: 'Your arms help you reach and carry things!',
       funFact: 'Your arms have 30 bones each and can lift things that weigh as much as you do!',
-      position: { x: 30, y: 45 },
-      narration: 'These are your arms! They help you reach high places, carry your backpack, and hug your family.'
+      narration: 'These are your arms! They help you reach high places, carry your backpack, and hug your family.',
+      image: armsImage,
+      bgColor: 'bg-green-100'
     },
     {
       id: 'hands',
       name: 'Hands',
       description: 'Your hands help you touch and hold things!',
       funFact: 'Each hand has 27 bones and can make thousands of different movements!',
-      position: { x: 20, y: 60 },
-      narration: 'These are your hands! They help you touch, hold, draw, play, and give hugs to people you love.'
+      narration: 'These are your hands! They help you touch, hold, draw, play, and give hugs to people you love.',
+      image: handsImage,
+      bgColor: 'bg-yellow-100'
     },
     {
       id: 'stomach',
       name: 'Stomach',
       description: 'Your stomach helps digest the food you eat!',
       funFact: 'Your stomach can stretch to hold about as much food as a large soup bowl!',
-      position: { x: 50, y: 50 },
-      narration: 'This is your stomach! It helps break down your food so your body can use it to grow big and strong.'
+      narration: 'This is your stomach! It helps break down your food so your body can use it to grow big and strong.',
+      image: stomachImage,
+      bgColor: 'bg-purple-100'
     },
     {
       id: 'legs',
       name: 'Legs',
       description: 'Your legs help you walk, run, and jump!',
       funFact: 'Your leg bones are the strongest bones in your body - stronger than concrete!',
-      position: { x: 50, y: 70 },
-      narration: 'These are your legs! They help you walk to school, run and play, and jump high like a kangaroo.'
+      narration: 'These are your legs! They help you walk to school, run and play, and jump high like a kangaroo.',
+      image: legsImage,
+      bgColor: 'bg-indigo-100'
     },
     {
       id: 'feet',
       name: 'Feet',
       description: 'Your feet help you balance and move around!',
       funFact: 'Each foot has 26 bones and over 7,000 nerve endings that help you feel the ground!',
-      position: { x: 50, y: 85 },
-      narration: 'These are your feet! They help you balance, walk, dance, and feel different textures on the ground.'
+      narration: 'These are your feet! They help you balance, walk, dance, and feel different textures on the ground.',
+      image: feetImage,
+      bgColor: 'bg-teal-100'
     }
   ];
 
   useEffect(() => {
-    playNarration("Welcome to the Body Map Adventure! Click on any glowing part of the body to learn amazing facts about how your body works.");
+    playNarration("Welcome to the Body Map Adventure! Click on any body part to learn amazing facts about how your body works. Each part has its own special job!");
   }, [playNarration]);
 
   const handleBodyPartClick = (bodyPart: BodyPart) => {
@@ -165,113 +180,63 @@ const InteractiveBodyMap: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="relative">
-            <Card className="child-friendly bg-gradient-to-b from-sky-50 to-blue-50 min-h-[700px] border-4 border-white shadow-2xl">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Body Parts Grid */}
+          <div className="lg:col-span-2">
+            <Card className="child-friendly bg-gradient-to-b from-sky-50 to-blue-50 border-4 border-white shadow-2xl">
               <CardContent className="p-8">
-                  <div className="relative w-full h-[600px] mx-auto flex items-center justify-center">
-                  
-                  {/* Enhanced Professional Human Figure */}
-                  <div className="relative">
-                    {/* Head with more detail */}
-                    <div className="w-28 h-32 bg-gradient-to-b from-amber-100 via-orange-200 to-orange-300 rounded-full mx-auto relative border-3 border-orange-400 shadow-2xl">
-                      {/* Hair */}
-                      <div className="absolute -top-4 left-2 right-2 h-10 bg-gradient-to-b from-amber-800 to-amber-900 rounded-t-full border-2 border-amber-900 shadow-lg"></div>
-                      {/* Eyes with more detail */}
-                      <div className="absolute top-10 left-6 w-4 h-4 bg-white rounded-full shadow-inner">
-                        <div className="w-3 h-3 bg-gradient-to-b from-blue-500 to-blue-700 rounded-full m-0.5">
-                          <div className="w-1 h-1 bg-white rounded-full ml-1 mt-1"></div>
+                <h3 className="text-2xl font-bold text-soft-purple mb-6 text-center">
+                  🫁 Click on a Body Part to Learn! 🫁
+                </h3>
+                
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  {bodyParts.map((part) => {
+                    const isHighlighted = isFocusMode && focusedElement === part.id;
+                    const isSelected = selectedPart?.id === part.id;
+                    
+                    return (
+                      <div
+                        key={part.id}
+                        onClick={() => handleBodyPartClick(part)}
+                        className={`
+                          ${part.bgColor} rounded-3xl p-4 cursor-pointer transition-all duration-300 border-4
+                          ${isSelected ? 
+                            'border-yellow-400 scale-105 shadow-2xl shadow-yellow-400/30' : 
+                            'border-white hover:border-purple-300 hover:scale-102 shadow-lg'
+                          }
+                          ${isHighlighted ? 'focus-highlight z-10' : ''}
+                          ${isFocusMode && !isHighlighted ? 'opacity-30' : 'opacity-100'}
+                        `}
+                      >
+                        <div className="text-center">
+                          <div className="relative mb-3">
+                            <img 
+                              src={part.image} 
+                              alt={part.name}
+                              className="w-full h-24 object-cover rounded-2xl shadow-md"
+                            />
+                            {isSelected && (
+                              <div className="absolute inset-0 bg-yellow-400/20 rounded-2xl animate-pulse"></div>
+                            )}
+                          </div>
+                          <h4 className="font-bold text-gray-800 text-lg">{part.name}</h4>
                         </div>
                       </div>
-                      <div className="absolute top-10 right-6 w-4 h-4 bg-white rounded-full shadow-inner">
-                        <div className="w-3 h-3 bg-gradient-to-b from-blue-500 to-blue-700 rounded-full m-0.5">
-                          <div className="w-1 h-1 bg-white rounded-full ml-1 mt-1"></div>
-                        </div>
-                      </div>
-                      {/* Nose */}
-                      <div className="absolute top-16 left-1/2 transform -translate-x-1/2 w-3 h-4 bg-gradient-to-b from-orange-300 to-orange-400 rounded-sm shadow-sm"></div>
-                      {/* Mouth */}
-                      <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-10 h-3 bg-gradient-to-b from-red-400 to-red-600 rounded-full shadow-sm"></div>
-                    </div>
-                    
-                    {/* Neck */}
-                    <div className="w-12 h-8 bg-gradient-to-b from-orange-200 to-orange-300 mx-auto border-x-3 border-orange-400 shadow-lg"></div>
-                    
-                    {/* Enhanced Torso */}
-                    <div className="w-44 h-60 bg-gradient-to-b from-blue-300 via-blue-400 to-blue-500 rounded-t-3xl mx-auto relative border-4 border-blue-600 shadow-2xl">
-                      {/* Enhanced Arms */}
-                      <div className="absolute -left-12 top-8 w-10 h-40 bg-gradient-to-b from-orange-200 via-orange-300 to-orange-400 rounded-full transform -rotate-15 border-3 border-orange-500 shadow-xl"></div>
-                      <div className="absolute -right-12 top-8 w-10 h-40 bg-gradient-to-b from-orange-200 via-orange-300 to-orange-400 rounded-full transform rotate-15 border-3 border-orange-500 shadow-xl"></div>
-                      
-                      {/* Enhanced Hands */}
-                      <div className="absolute -left-18 top-40 w-8 h-10 bg-gradient-to-b from-orange-300 to-orange-400 rounded-full border-2 border-orange-500 shadow-lg"></div>
-                      <div className="absolute -right-18 top-40 w-8 h-10 bg-gradient-to-b from-orange-300 to-orange-400 rounded-full border-2 border-orange-500 shadow-lg"></div>
-                      
-                      {/* Heart indicator with glow */}
-                      <div className="absolute left-10 top-16 w-6 h-6 bg-red-500 rounded-full animate-pulse shadow-lg shadow-red-400/50">
-                        <div className="w-full h-full bg-gradient-to-br from-red-400 to-red-600 rounded-full"></div>
-                      </div>
-                    </div>
-                    
-                    {/* Enhanced Legs */}
-                    <div className="flex justify-center gap-4">
-                      <div className="w-10 h-48 bg-gradient-to-b from-indigo-600 via-indigo-700 to-indigo-800 rounded-b-2xl border-3 border-indigo-700 shadow-xl"></div>
-                      <div className="w-10 h-48 bg-gradient-to-b from-indigo-600 via-indigo-700 to-indigo-800 rounded-b-2xl border-3 border-indigo-700 shadow-xl"></div>
-                    </div>
-                    
-                    {/* Enhanced Feet */}
-                    <div className="flex justify-center gap-4 mt-2">
-                      <div className="w-12 h-8 bg-gradient-to-b from-gray-800 to-black rounded-full border-2 border-gray-900 shadow-xl"></div>
-                      <div className="w-12 h-8 bg-gradient-to-b from-gray-800 to-black rounded-full border-2 border-gray-900 shadow-xl"></div>
-                    </div>
-
-                    {/* Interactive body part buttons with glow effect */}
-                    {bodyParts.map((part) => {
-                      const isHighlighted = isFocusMode && focusedElement === part.id;
-                      const isSelected = selectedPart?.id === part.id;
-                      
-                      return (
-                        <button
-                          key={part.id}
-                          className={`
-                            absolute w-8 h-8 rounded-full transition-all duration-500 cursor-pointer
-                            border-3 border-white shadow-lg backdrop-blur-sm
-                            ${isSelected ? 
-                              'bg-yellow-400 scale-150 animate-pulse shadow-yellow-400/50 shadow-2xl' : 
-                              'bg-green-400 hover:bg-green-300 hover:scale-125 shadow-green-400/30'
-                            }
-                            ${isHighlighted ? 'focus-highlight z-50' : ''}
-                            ${isFocusMode && !isHighlighted ? 'opacity-20' : 'opacity-90 hover:opacity-100'}
-                            ${!isSelected && !isFocusMode ? 'animate-pulse' : ''}
-                          `}
-                          style={{
-                            left: `${part.position.x}%`,
-                            top: `${part.position.y}%`,
-                            transform: 'translate(-50%, -50%)',
-                            boxShadow: isSelected ? 
-                              '0 0 30px rgba(251, 191, 36, 0.8), inset 0 2px 4px rgba(255,255,255,0.3)' : 
-                              '0 0 15px rgba(34, 197, 94, 0.5), inset 0 2px 4px rgba(255,255,255,0.3)'
-                          }}
-                          onClick={() => handleBodyPartClick(part)}
-                          aria-label={`Learn about ${part.name}`}
-                        >
-                          <div className="w-full h-full rounded-full bg-gradient-to-br from-white/30 to-transparent"></div>
-                        </button>
-                      );
-                    })}
-                  </div>
+                    );
+                  })}
                 </div>
               </CardContent>
             </Card>
           </div>
 
+          {/* Information Panel */}
           <div>
             {selectedPart ? (
-              <Card className="child-friendly bg-gradient-to-br from-yellow-50 to-orange-50 min-h-[400px] border-4 border-yellow-200 shadow-2xl">
-                <CardContent className="p-8">
-                  <div className="flex justify-between items-start mb-6">
-                    <h2 className="text-4xl font-bold text-purple-600 flex items-center gap-3">
-                      <span className="text-5xl">✨</span>
+              <Card className="child-friendly bg-gradient-to-br from-yellow-50 to-orange-50 min-h-[500px] border-4 border-yellow-200 shadow-2xl">
+                <CardContent className="p-6">
+                  <div className="flex justify-between items-start mb-4">
+                    <h2 className="text-3xl font-bold text-purple-600 flex items-center gap-2">
+                      <span className="text-4xl">✨</span>
                       {selectedPart.name}
                     </h2>
                     <Button
@@ -285,19 +250,27 @@ const InteractiveBodyMap: React.FC = () => {
                     </Button>
                   </div>
                   
-                  <div className="space-y-6">
-                    <div className="bg-white/80 rounded-3xl p-6 border-2 border-purple-200">
-                      <p className="text-xl text-gray-700 leading-relaxed font-medium">
+                  <div className="mb-6">
+                    <img 
+                      src={selectedPart.image} 
+                      alt={selectedPart.name}
+                      className="w-full h-40 object-cover rounded-3xl shadow-lg border-4 border-white"
+                    />
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <div className="bg-white/80 rounded-3xl p-4 border-2 border-purple-200">
+                      <p className="text-lg text-gray-700 leading-relaxed font-medium">
                         {selectedPart.description}
                       </p>
                     </div>
                     
-                    <div className="bg-gradient-to-r from-blue-100 to-purple-100 rounded-3xl p-6 border-2 border-blue-200">
-                      <h3 className="text-xl font-bold text-blue-600 mb-3 flex items-center gap-2">
-                        <span className="text-2xl">🌟</span>
+                    <div className="bg-gradient-to-r from-blue-100 to-purple-100 rounded-3xl p-4 border-2 border-blue-200">
+                      <h3 className="text-lg font-bold text-blue-600 mb-2 flex items-center gap-2">
+                        <span className="text-xl">🌟</span>
                         Amazing Fact!
                       </h3>
-                      <p className="text-gray-700 leading-relaxed font-medium">
+                      <p className="text-gray-700 leading-relaxed font-medium text-sm">
                         {selectedPart.funFact}
                       </p>
                     </div>
@@ -305,20 +278,20 @@ const InteractiveBodyMap: React.FC = () => {
                 </CardContent>
               </Card>
             ) : (
-              <Card className="child-friendly bg-gradient-to-br from-blue-50 to-purple-50 min-h-[400px] border-4 border-blue-200 shadow-2xl">
-                <CardContent className="p-8 flex items-center justify-center">
+              <Card className="child-friendly bg-gradient-to-br from-blue-50 to-purple-50 min-h-[500px] border-4 border-blue-200 shadow-2xl">
+                <CardContent className="p-6 flex items-center justify-center">
                   <div className="text-center">
-                    <div className="text-8xl mb-6 animate-bounce">👆</div>
-                    <h2 className="text-3xl font-bold text-blue-600 mb-4">
-                      Click on a glowing body part!
+                    <div className="text-6xl mb-4 animate-bounce">👆</div>
+                    <h2 className="text-2xl font-bold text-blue-600 mb-3">
+                      Click on a body part!
                     </h2>
-                    <p className="text-xl text-gray-600 font-medium">
+                    <p className="text-lg text-gray-600 font-medium mb-4">
                       Discover amazing facts about how your body works
                     </p>
-                    <div className="mt-6 flex justify-center gap-4">
-                      <div className="w-4 h-4 bg-green-400 rounded-full animate-pulse shadow-lg"></div>
-                      <div className="w-4 h-4 bg-green-400 rounded-full animate-pulse shadow-lg" style={{animationDelay: '0.2s'}}></div>
-                      <div className="w-4 h-4 bg-green-400 rounded-full animate-pulse shadow-lg" style={{animationDelay: '0.4s'}}></div>
+                    <div className="flex justify-center gap-2">
+                      <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
+                      <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
+                      <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
                     </div>
                   </div>
                 </CardContent>
