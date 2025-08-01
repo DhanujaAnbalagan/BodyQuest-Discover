@@ -169,48 +169,60 @@ const InteractiveBodyMap: React.FC = () => {
           <div className="relative">
             <Card className="child-friendly bg-gradient-to-b from-sky-50 to-blue-50 min-h-[700px] border-4 border-white shadow-2xl">
               <CardContent className="p-8">
-                <div className="relative w-full h-[600px] mx-auto flex items-center justify-center">
+                  <div className="relative w-full h-[600px] mx-auto flex items-center justify-center">
                   
-                  {/* Professional Human Figure */}
+                  {/* Enhanced Professional Human Figure */}
                   <div className="relative">
-                    {/* Head */}
-                    <div className="w-24 h-28 bg-gradient-to-b from-orange-200 to-orange-300 rounded-full mx-auto relative border-2 border-orange-400 shadow-lg">
-                      <div className="absolute -top-3 left-3 right-3 h-8 bg-gradient-to-b from-amber-700 to-amber-800 rounded-t-full border border-amber-900"></div>
-                      <div className="absolute top-8 left-5 w-3 h-3 bg-gradient-to-b from-blue-500 to-blue-700 rounded-full shadow-inner"></div>
-                      <div className="absolute top-8 right-5 w-3 h-3 bg-gradient-to-b from-blue-500 to-blue-700 rounded-full shadow-inner"></div>
-                      <div className="absolute top-12 left-1/2 transform -translate-x-1/2 w-2 h-3 bg-gradient-to-b from-pink-300 to-pink-500 rounded-sm"></div>
-                      <div className="absolute top-17 left-1/2 transform -translate-x-1/2 w-8 h-2 bg-gradient-to-b from-red-400 to-red-600 rounded-full"></div>
+                    {/* Head with more detail */}
+                    <div className="w-28 h-32 bg-gradient-to-b from-amber-100 via-orange-200 to-orange-300 rounded-full mx-auto relative border-3 border-orange-400 shadow-2xl">
+                      {/* Hair */}
+                      <div className="absolute -top-4 left-2 right-2 h-10 bg-gradient-to-b from-amber-800 to-amber-900 rounded-t-full border-2 border-amber-900 shadow-lg"></div>
+                      {/* Eyes with more detail */}
+                      <div className="absolute top-10 left-6 w-4 h-4 bg-white rounded-full shadow-inner">
+                        <div className="w-3 h-3 bg-gradient-to-b from-blue-500 to-blue-700 rounded-full m-0.5">
+                          <div className="w-1 h-1 bg-white rounded-full ml-1 mt-1"></div>
+                        </div>
+                      </div>
+                      <div className="absolute top-10 right-6 w-4 h-4 bg-white rounded-full shadow-inner">
+                        <div className="w-3 h-3 bg-gradient-to-b from-blue-500 to-blue-700 rounded-full m-0.5">
+                          <div className="w-1 h-1 bg-white rounded-full ml-1 mt-1"></div>
+                        </div>
+                      </div>
+                      {/* Nose */}
+                      <div className="absolute top-16 left-1/2 transform -translate-x-1/2 w-3 h-4 bg-gradient-to-b from-orange-300 to-orange-400 rounded-sm shadow-sm"></div>
+                      {/* Mouth */}
+                      <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-10 h-3 bg-gradient-to-b from-red-400 to-red-600 rounded-full shadow-sm"></div>
                     </div>
                     
                     {/* Neck */}
-                    <div className="w-10 h-6 bg-gradient-to-b from-orange-200 to-orange-300 mx-auto border-x-2 border-orange-400"></div>
+                    <div className="w-12 h-8 bg-gradient-to-b from-orange-200 to-orange-300 mx-auto border-x-3 border-orange-400 shadow-lg"></div>
                     
-                    {/* Torso */}
-                    <div className="w-40 h-56 bg-gradient-to-b from-indigo-300 via-indigo-400 to-indigo-500 rounded-t-3xl mx-auto relative border-4 border-indigo-600 shadow-xl">
-                      {/* Left Arm */}
-                      <div className="absolute -left-10 top-6 w-8 h-36 bg-gradient-to-b from-orange-200 to-orange-300 rounded-full transform -rotate-12 border-2 border-orange-400 shadow-lg"></div>
-                      {/* Right Arm */}
-                      <div className="absolute -right-10 top-6 w-8 h-36 bg-gradient-to-b from-orange-200 to-orange-300 rounded-full transform rotate-12 border-2 border-orange-400 shadow-lg"></div>
+                    {/* Enhanced Torso */}
+                    <div className="w-44 h-60 bg-gradient-to-b from-blue-300 via-blue-400 to-blue-500 rounded-t-3xl mx-auto relative border-4 border-blue-600 shadow-2xl">
+                      {/* Enhanced Arms */}
+                      <div className="absolute -left-12 top-8 w-10 h-40 bg-gradient-to-b from-orange-200 via-orange-300 to-orange-400 rounded-full transform -rotate-15 border-3 border-orange-500 shadow-xl"></div>
+                      <div className="absolute -right-12 top-8 w-10 h-40 bg-gradient-to-b from-orange-200 via-orange-300 to-orange-400 rounded-full transform rotate-15 border-3 border-orange-500 shadow-xl"></div>
                       
-                      {/* Left Hand */}
-                      <div className="absolute -left-16 top-36 w-6 h-8 bg-gradient-to-b from-orange-300 to-orange-400 rounded-full border border-orange-500 shadow-md"></div>
-                      {/* Right Hand */}
-                      <div className="absolute -right-16 top-36 w-6 h-8 bg-gradient-to-b from-orange-300 to-orange-400 rounded-full border border-orange-500 shadow-md"></div>
+                      {/* Enhanced Hands */}
+                      <div className="absolute -left-18 top-40 w-8 h-10 bg-gradient-to-b from-orange-300 to-orange-400 rounded-full border-2 border-orange-500 shadow-lg"></div>
+                      <div className="absolute -right-18 top-40 w-8 h-10 bg-gradient-to-b from-orange-300 to-orange-400 rounded-full border-2 border-orange-500 shadow-lg"></div>
                       
-                      {/* Heart indicator */}
-                      <div className="absolute left-8 top-12 w-4 h-4 bg-red-500 rounded-full animate-pulse"></div>
+                      {/* Heart indicator with glow */}
+                      <div className="absolute left-10 top-16 w-6 h-6 bg-red-500 rounded-full animate-pulse shadow-lg shadow-red-400/50">
+                        <div className="w-full h-full bg-gradient-to-br from-red-400 to-red-600 rounded-full"></div>
+                      </div>
                     </div>
                     
-                    {/* Legs */}
-                    <div className="flex justify-center gap-3">
-                      <div className="w-8 h-44 bg-gradient-to-b from-gray-600 to-gray-800 rounded-b-lg border-2 border-gray-700 shadow-lg"></div>
-                      <div className="w-8 h-44 bg-gradient-to-b from-gray-600 to-gray-800 rounded-b-lg border-2 border-gray-700 shadow-lg"></div>
+                    {/* Enhanced Legs */}
+                    <div className="flex justify-center gap-4">
+                      <div className="w-10 h-48 bg-gradient-to-b from-indigo-600 via-indigo-700 to-indigo-800 rounded-b-2xl border-3 border-indigo-700 shadow-xl"></div>
+                      <div className="w-10 h-48 bg-gradient-to-b from-indigo-600 via-indigo-700 to-indigo-800 rounded-b-2xl border-3 border-indigo-700 shadow-xl"></div>
                     </div>
                     
-                    {/* Feet */}
-                    <div className="flex justify-center gap-3 mt-2">
-                      <div className="w-10 h-6 bg-gradient-to-b from-gray-800 to-black rounded-full border border-gray-900 shadow-md"></div>
-                      <div className="w-10 h-6 bg-gradient-to-b from-gray-800 to-black rounded-full border border-gray-900 shadow-md"></div>
+                    {/* Enhanced Feet */}
+                    <div className="flex justify-center gap-4 mt-2">
+                      <div className="w-12 h-8 bg-gradient-to-b from-gray-800 to-black rounded-full border-2 border-gray-900 shadow-xl"></div>
+                      <div className="w-12 h-8 bg-gradient-to-b from-gray-800 to-black rounded-full border-2 border-gray-900 shadow-xl"></div>
                     </div>
 
                     {/* Interactive body part buttons with glow effect */}

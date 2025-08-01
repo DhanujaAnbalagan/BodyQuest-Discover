@@ -11,6 +11,8 @@ import InteractiveBodyMap from "./pages/InteractiveBodyMap";
 import SenseSimulator from "./pages/SenseSimulator";
 import EmotionMirror from "./pages/EmotionMirror";
 import Games from "./pages/Games";
+import BodyPartPuzzle from "./components/games/BodyPartPuzzle";
+import SenseTarget from "./components/games/SenseTarget";
 import MiniQuizzes from "./pages/MiniQuizzes";
 import ProgressTracker from "./pages/ProgressTracker";
 import ParentDashboard from "./pages/ParentDashboard";
@@ -32,7 +34,9 @@ const App = () => (
               <Route path="/body-map" element={<InteractiveBodyMap />} />
               <Route path="/senses" element={<SenseSimulator />} />
               <Route path="/emotions" element={<EmotionMirror />} />
-              <Route path="/games" element={<Games />} />
+          <Route path="/games" element={<Games />} />
+          <Route path="/games/body-puzzle" element={<BodyPartPuzzle />} />
+          <Route path="/games/sense-target" element={<SenseTarget />} />
               <Route path="/quizzes" element={<MiniQuizzes />} />
               <Route path="/progress" element={<ProgressTracker />} />
               <Route path="/parent-login" element={<ParentLogin />} />

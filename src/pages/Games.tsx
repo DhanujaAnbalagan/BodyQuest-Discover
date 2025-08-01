@@ -23,7 +23,8 @@ const Games: React.FC = () => {
       color: 'bg-soft-pink', 
       description: 'Put body parts in the right place!',
       emoji: '🧩',
-      comingSoon: true
+      comingSoon: false,
+      route: '/games/body-puzzle'
     },
     { 
       name: 'Sense Target', 
@@ -31,7 +32,8 @@ const Games: React.FC = () => {
       color: 'bg-soft-blue', 
       description: 'Match senses with objects!',
       emoji: '🎯',
-      comingSoon: true
+      comingSoon: false,
+      route: '/games/sense-target'
     },
     { 
       name: 'Memory Match', 
@@ -82,14 +84,18 @@ const Games: React.FC = () => {
               <Card 
                 key={game.name} 
                 className={`child-friendly ${game.color} ${game.comingSoon ? 'opacity-70' : 'cursor-pointer hover:scale-105'} transition-all`}
+                onClick={() => !game.comingSoon && game.route && navigate(game.route)}
               >
                 <CardContent className="p-8 text-center">
                   <div className="text-4xl mb-4">{game.emoji}</div>
-                  <Icon size={48} className="mx-auto mb-4 text-gray-700" strokeWidth={2.5} />
-                  <h3 className="text-2xl font-bold text-gray-700 mb-2">{game.name}</h3>
-                  <p className="text-gray-600 text-lg mb-2">{game.description}</p>
+                  <Icon size={48} className="mx-auto mb-4 text-gray-800" strokeWidth={3} />
+                  <h3 className="text-2xl font-bold text-gray-800 mb-2">{game.name}</h3>
+                  <p className="text-gray-700 text-lg mb-2">{game.description}</p>
                   {game.comingSoon && (
                     <p className="text-gray-500 text-sm font-semibold">Coming Soon!</p>
+                  )}
+                  {!game.comingSoon && (
+                    <p className="text-gray-800 text-sm font-semibold mt-2">▶ Click to Play!</p>
                   )}
                 </CardContent>
               </Card>
