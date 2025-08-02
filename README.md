@@ -22,9 +22,6 @@ Children on the autism spectrum often benefit from visual, structured, and engag
 
 - ⚛️ **React** + **Vite** – for a fast, modern frontend
 - 🎨 **Tailwind CSS** – for clean, accessible design
-- 🧪 **Modular Components** – easy to extend for other topics (e.g., planets, animals)
+
 
 ---
-
-## 📂 Project Structure
-
