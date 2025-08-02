@@ -13,6 +13,8 @@ import EmotionMirror from "./pages/EmotionMirror";
 import Games from "./pages/Games";
 import BodyPartPuzzle from "./components/games/BodyPartPuzzle";
 import SenseTarget from "./components/games/SenseTarget";
+import MemoryMatch from "./components/games/MemoryMatch";
+import EmotionDetective from "./components/games/EmotionDetective";
 import MiniQuizzes from "./pages/MiniQuizzes";
 import ProgressTracker from "./pages/ProgressTracker";
 import ParentDashboard from "./pages/ParentDashboard";
@@ -37,6 +39,8 @@ const App = () => (
           <Route path="/games" element={<Games />} />
           <Route path="/games/body-puzzle" element={<BodyPartPuzzle />} />
           <Route path="/games/sense-target" element={<SenseTarget />} />
+          <Route path="/games/memory-match" element={<MemoryMatch />} />
+          <Route path="/games/emotion-detective" element={<EmotionDetective />} />
               <Route path="/quizzes" element={<MiniQuizzes />} />
               <Route path="/progress" element={<ProgressTracker />} />
               <Route path="/parent-login" element={<ParentLogin />} />

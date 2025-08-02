@@ -20,6 +20,11 @@ import handsImage from '@/assets/body-parts/hands.jpg';
 import stomachImage from '@/assets/body-parts/stomach.jpg';
 import legsImage from '@/assets/body-parts/legs.jpg';
 import feetImage from '@/assets/body-parts/feet.jpg';
+import earsImage from '@/assets/body-parts/ears.jpg';
+import lungsImage from '@/assets/body-parts/lungs.jpg';
+import brainImage from '@/assets/body-parts/brain.jpg';
+import teethImage from '@/assets/body-parts/teeth.jpg';
+import spineImage from '@/assets/body-parts/spine.jpg';
 
 interface BodyPart {
   id: string;
@@ -127,6 +132,51 @@ const InteractiveBodyMap: React.FC = () => {
       narration: 'These are your feet! They help you balance, walk, dance, and feel different textures on the ground.',
       image: feetImage,
       bgColor: 'bg-teal-100'
+    },
+    {
+      id: 'ears',
+      name: 'Ears',
+      description: 'Your ears help you hear sounds around you!',
+      funFact: 'Your ears can hear sounds from 20 Hz to 20,000 Hz and help you balance too!',
+      narration: 'These are your ears! They help you hear music, voices, and all the sounds around you.',
+      image: earsImage,
+      bgColor: 'bg-cyan-100'
+    },
+    {
+      id: 'lungs',
+      name: 'Lungs',
+      description: 'Your lungs help you breathe air!',
+      funFact: 'You breathe about 20,000 times every day, and your lungs clean the air you breathe!',
+      narration: 'These are your lungs! They help you breathe in fresh air and breathe out what your body doesn\'t need.',
+      image: lungsImage,
+      bgColor: 'bg-sky-100'
+    },
+    {
+      id: 'brain',
+      name: 'Brain',
+      description: 'Your brain controls everything you do!',
+      funFact: 'Your brain uses 20% of your body\'s energy and never stops working, even when you sleep!',
+      narration: 'This is your brain! It controls your thoughts, memories, movements, and everything you do.',
+      image: brainImage,
+      bgColor: 'bg-violet-100'
+    },
+    {
+      id: 'teeth',
+      name: 'Teeth',
+      description: 'Your teeth help you chew food!',
+      funFact: 'You have different types of teeth - sharp ones to cut and flat ones to grind food!',
+      narration: 'These are your teeth! They help you bite and chew your food so you can swallow it safely.',
+      image: teethImage,
+      bgColor: 'bg-slate-100'
+    },
+    {
+      id: 'spine',
+      name: 'Spine',
+      description: 'Your spine supports your whole body!',
+      funFact: 'Your spine has 33 bones called vertebrae that protect your spinal cord!',
+      narration: 'This is your spine! It keeps you upright and protects the nerves that connect your brain to your body.',
+      image: spineImage,
+      bgColor: 'bg-emerald-100'
     }
   ];
 

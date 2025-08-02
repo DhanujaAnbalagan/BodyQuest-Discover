@@ -72,8 +72,6 @@ const MiniQuizzes: React.FC = () => {
     if (quiz?.available) {
       setActiveQuiz(quizId);
       playNarration(`Starting ${quiz.name}! Get ready to test your knowledge.`);
-    } else {
-      playNarration("This quiz is coming soon! Try the other available quizzes first.");
     }
   };
 

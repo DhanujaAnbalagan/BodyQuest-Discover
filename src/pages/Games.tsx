@@ -41,7 +41,8 @@ const Games: React.FC = () => {
       color: 'bg-soft-green', 
       description: 'Remember and match pairs!',
       emoji: '🔄',
-      comingSoon: true
+      comingSoon: false,
+      route: '/games/memory-match'
     },
     { 
       name: 'Emotion Detective', 
@@ -49,7 +50,8 @@ const Games: React.FC = () => {
       color: 'bg-soft-yellow', 
       description: 'Find the matching emotions!',
       emoji: '🕵️',
-      comingSoon: true
+      comingSoon: false,
+      route: '/games/emotion-detective'
     }
   ];
 
@@ -103,14 +105,13 @@ const Games: React.FC = () => {
           })}
         </div>
 
-        {/* Coming Soon Message */}
+        {/* All Games Ready Message */}
         <div className="mt-8">
-          <Card className="child-friendly bg-soft-purple/30">
+          <Card className="child-friendly bg-gradient-to-r from-green-100 to-blue-100 border-4 border-green-200">
             <CardContent className="p-6 text-center">
-              <h3 className="text-xl font-bold text-soft-purple mb-2">🚧 Games Coming Soon!</h3>
+              <h3 className="text-xl font-bold text-soft-purple mb-2">🎉 All Games Ready to Play!</h3>
               <p className="text-gray-700">
-                Exciting educational games are being created just for you! 
-                In the meantime, try out the quizzes and other activities!
+                Four exciting educational games are now available! Challenge yourself and have fun while learning!
               </p>
             </CardContent>
           </Card>
