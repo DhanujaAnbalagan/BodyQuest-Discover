@@ -152,7 +152,7 @@ const SenseTarget: React.FC = () => {
         )}
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Items to Match */}
+          {}
           <Card className="child-friendly bg-soft-pink">
             <CardContent className="p-6">
               <h3 className="text-2xl font-bold text-gray-700 mb-6 text-center">
@@ -178,7 +178,7 @@ const SenseTarget: React.FC = () => {
             </CardContent>
           </Card>
 
-          {/* Sense Targets */}
+          {}
           <Card className="child-friendly bg-soft-blue">
             <CardContent className="p-6">
               <h3 className="text-2xl font-bold text-white mb-6 text-center">

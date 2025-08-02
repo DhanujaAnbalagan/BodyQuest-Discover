@@ -28,7 +28,7 @@ export const AudioControls: React.FC = () => {
             Audio Settings
           </h3>
           
-          {/* Main Audio Toggle */}
+          {}
           <div className="flex items-center justify-between mb-4">
             <span className="text-sm font-medium">Narration</span>
             <Button
@@ -42,7 +42,7 @@ export const AudioControls: React.FC = () => {
             </Button>
           </div>
 
-          {/* Volume Control */}
+          {}
           <div className="mb-4">
             <label className="text-sm font-medium mb-2 block">Volume</label>
             <Slider
@@ -60,7 +60,7 @@ export const AudioControls: React.FC = () => {
             </div>
           </div>
 
-          {/* Background Music Toggle */}
+          {}
           <div className="flex items-center justify-between">
             <span className="text-sm font-medium">Background Music</span>
             <Button

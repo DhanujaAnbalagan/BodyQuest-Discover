@@ -23,7 +23,7 @@ const ParentDashboard: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-warm-white p-4">
-      {/* Header */}
+      {}
       <div className="flex justify-between items-center mb-8">
         <div>
           <h1 className="text-3xl font-bold text-soft-purple">Parent Dashboard</h1>
@@ -41,7 +41,7 @@ const ParentDashboard: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
-        {/* Settings Card */}
+        {}
         <Card className="child-friendly">
           <CardHeader>
             <CardTitle className="flex items-center text-soft-blue">
@@ -73,7 +73,7 @@ const ParentDashboard: React.FC = () => {
           </CardContent>
         </Card>
 
-        {/* Progress Overview */}
+        {}
         <Card className="child-friendly">
           <CardHeader>
             <CardTitle className="flex items-center text-soft-green">
@@ -124,7 +124,7 @@ const ParentDashboard: React.FC = () => {
           </CardContent>
         </Card>
 
-        {/* Safety Features */}
+        {}
         <Card className="child-friendly">
           <CardHeader>
             <CardTitle className="flex items-center text-soft-pink">
@@ -155,7 +155,7 @@ const ParentDashboard: React.FC = () => {
           </CardContent>
         </Card>
 
-        {/* Activity Preferences */}
+        {}
         <Card className="child-friendly">
           <CardHeader>
             <CardTitle className="flex items-center text-soft-purple">

@@ -15,7 +15,7 @@ const Index = () => {
   const { isFocusMode, focusedElement } = useFocus();
 
   useEffect(() => {
-    // Welcome narration
+
     setTimeout(() => {
       playNarration("Welcome to BodyQuest! Let's discover your amazing body and senses together. Click on any activity to start your adventure!");
     }, 1000);
@@ -94,7 +94,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-warm-white p-4 relative">
-      {/* Audio and Focus Controls */}
+      {}
       <div className="fixed top-4 right-4 z-50 flex gap-2">
         <AudioControls />
         <FocusToggle />
@@ -110,7 +110,7 @@ const Index = () => {
       </div>
 
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
+        {}
         <div className="text-center mb-12 pt-8">
           <h1 className="text-5xl md:text-6xl font-bold text-soft-purple mb-4 gentle-bounce">
             🌟 BodyQuest 🌟
@@ -123,7 +123,7 @@ const Index = () => {
           </p>
         </div>
 
-        {/* Activities Grid */}
+        {}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {activities.map((activity) => {
             const Icon = activity.icon;
@@ -165,7 +165,7 @@ const Index = () => {
           })}
         </div>
 
-        {/* Welcome Message */}
+        {}
         <div className="text-center">
           <Card className="child-friendly bg-white/80 backdrop-blur-sm max-w-2xl mx-auto">
             <CardContent className="p-8">

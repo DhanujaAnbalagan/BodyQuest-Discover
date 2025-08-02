@@ -78,7 +78,7 @@ const MemoryMatch: React.FC = () => {
       const secondCard = cards[secondId];
 
       if (firstCard.name === secondCard.name) {
-        // Match found!
+
         playSound('success');
         playNarration(`Great match! You found the ${firstCard.name} pair!`);
         setScore(prev => prev + 10);
@@ -91,7 +91,7 @@ const MemoryMatch: React.FC = () => {
           ));
           setFlippedCards([]);
           
-          // Check if game is complete
+
           const updatedCards = cards.map(card => 
             card.id === firstId || card.id === secondId 
               ? { ...card, isMatched: true }
@@ -105,7 +105,7 @@ const MemoryMatch: React.FC = () => {
           }
         }, 1000);
       } else {
-        // No match
+
         playSound('error');
         setTimeout(() => {
           setCards(prev => prev.map(card => 

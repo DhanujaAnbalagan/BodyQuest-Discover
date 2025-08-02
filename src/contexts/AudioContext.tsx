@@ -45,10 +45,10 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     utterance.pitch = 1.2;
     utterance.volume = volume;
     
-    // Priority list of female voices for child-friendly narration
+
     const voices = window.speechSynthesis.getVoices();
     const femaleVoice = voices.find(voice => 
-      // Look for specific female voices first
+
       voice.name.includes('Google UK English Female') || 
       voice.name.includes('Microsoft Zira') ||
       voice.name.includes('Samantha') ||
@@ -58,9 +58,9 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       voice.name.includes('Victoria') ||
       voice.name.includes('Kate') ||
       voice.name.includes('Fiona') ||
-      // Then look for any voice marked as female
+
       (voice.name.toLowerCase().includes('female') && voice.lang.startsWith('en')) ||
-      // Look for common female voice names
+
       voice.name.toLowerCase().includes('susan') ||
       voice.name.toLowerCase().includes('mary') ||
       voice.name.toLowerCase().includes('sarah') ||
@@ -71,7 +71,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       utterance.voice = femaleVoice;
       console.log('Using female voice:', femaleVoice.name);
     } else {
-      // Fallback: use any available female voice
+
       const anyFemaleVoice = voices.find(voice => 
         voice.lang.startsWith('en') && !voice.name.toLowerCase().includes('male')
       );

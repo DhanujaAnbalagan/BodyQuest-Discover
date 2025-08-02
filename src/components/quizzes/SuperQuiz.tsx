@@ -250,7 +250,7 @@ export const SuperQuiz: React.FC<SuperQuizProps> = ({ onComplete }) => {
           </div>
         )}
 
-        {/* Progress indicator */}
+        {}
         <div className="mt-6">
           <div className="w-full bg-gray-200 rounded-full h-2">
             <div 

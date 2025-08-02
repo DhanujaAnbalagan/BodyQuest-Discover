@@ -233,7 +233,7 @@ const MiniQuizzes: React.FC = () => {
           })}
         </div>
 
-        {/* Quiz Challenge Message */}
+        {}
         <div className="mt-8">
           <Card className="child-friendly bg-soft-green/30">
             <CardContent className="p-6 text-center">

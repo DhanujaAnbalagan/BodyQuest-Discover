@@ -189,7 +189,7 @@ const EmotionDetective: React.FC = () => {
           </Card>
         ) : (
           <>
-            {/* Situation Card */}
+            {}
             <Card className="child-friendly bg-gradient-to-br from-blue-50 to-purple-50 border-4 border-blue-200 shadow-2xl mb-6">
               <CardContent className="p-8 text-center">
                 <h2 className="text-2xl font-bold text-purple-600 mb-4">🔍 Detective Case #{currentRound + 1}</h2>
@@ -204,7 +204,7 @@ const EmotionDetective: React.FC = () => {
               </CardContent>
             </Card>
 
-            {/* Emotion Options */}
+            {}
             <Card className="child-friendly bg-gradient-to-b from-yellow-50 to-orange-50 border-4 border-yellow-200 shadow-2xl">
               <CardContent className="p-6">
                 <h3 className="text-2xl font-bold text-orange-600 text-center mb-6">

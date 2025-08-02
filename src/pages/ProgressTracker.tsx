@@ -25,7 +25,7 @@ const ProgressTracker: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-warm-white p-4">
-      {/* Navigation */}
+      {}
       <div className="fixed top-4 left-4 z-50">
         <Button
           onClick={() => navigate('/')}
@@ -38,7 +38,7 @@ const ProgressTracker: React.FC = () => {
         </Button>
       </div>
 
-      {/* Controls */}
+      {}
       <div className="fixed top-4 right-4 z-50 flex gap-2">
         <AudioControls />
         <FocusToggle />
@@ -54,7 +54,7 @@ const ProgressTracker: React.FC = () => {
           </p>
         </div>
 
-        {/* Achievement Cards */}
+        {}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           {achievements.map((achievement, index) => {
             const Icon = achievement.icon;
@@ -91,7 +91,7 @@ const ProgressTracker: React.FC = () => {
           })}
         </div>
 
-        {/* Encouragement */}
+        {}
         <Card className="child-friendly bg-soft-green/50 text-center">
           <CardContent className="p-8">
             <h2 className="text-2xl font-bold text-soft-purple mb-4">

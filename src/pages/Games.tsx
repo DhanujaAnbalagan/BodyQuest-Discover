@@ -105,7 +105,7 @@ const Games: React.FC = () => {
           })}
         </div>
 
-        {/* Exciting Games Message */}
+        {}
         <div className="mt-8">
           <Card className="child-friendly bg-gradient-to-r from-green-100 to-blue-100 border-4 border-green-200">
             <CardContent className="p-6 text-center">

@@ -62,9 +62,9 @@ const ParentLogin: React.FC = () => {
       return;
     }
 
-    // Simulate authentication
+
     if (isLogin) {
-      // Mock login logic
+
       if (formData.email === 'parent@example.com' && formData.password === 'Parent123') {
         toast({
           title: "Login successful!",
@@ -79,7 +79,7 @@ const ParentLogin: React.FC = () => {
         });
       }
     } else {
-      // Mock registration logic
+
       toast({
         title: "Registration successful!",
         description: "Your account has been created. You can now log in."
@@ -92,7 +92,7 @@ const ParentLogin: React.FC = () => {
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
     
-    // Clear error when user starts typing
+
     if (errors[field]) {
       setErrors(prev => ({ ...prev, [field]: '' }));
     }
@@ -100,7 +100,7 @@ const ParentLogin: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-warm-white p-4 flex items-center justify-center">
-      {/* Back Button */}
+      {}
       <div className="fixed top-4 left-4 z-50">
         <Button
           onClick={() => navigate('/')}
@@ -129,7 +129,7 @@ const ParentLogin: React.FC = () => {
 
           <CardContent className="space-y-6">
             <form onSubmit={handleSubmit} className="space-y-4">
-              {/* Email Field */}
+              {}
               <div className="space-y-2">
                 <Label htmlFor="email" className="text-sm font-medium">
                   Email Address
@@ -150,7 +150,7 @@ const ParentLogin: React.FC = () => {
                 )}
               </div>
 
-              {/* Password Field */}
+              {}
               <div className="space-y-2">
                 <Label htmlFor="password" className="text-sm font-medium">
                   Password
@@ -183,7 +183,7 @@ const ParentLogin: React.FC = () => {
                 )}
               </div>
 
-              {/* Confirm Password Field (Registration only) */}
+              {}
               {!isLogin && (
                 <div className="space-y-2">
                   <Label htmlFor="confirmPassword" className="text-sm font-medium">
@@ -206,7 +206,7 @@ const ParentLogin: React.FC = () => {
                 </div>
               )}
 
-              {/* Submit Button */}
+              {}
               <Button
                 type="submit"
                 className="w-full bodyquest-button bg-soft-blue hover:bg-soft-blue/80 text-white"
@@ -215,7 +215,7 @@ const ParentLogin: React.FC = () => {
               </Button>
             </form>
 
-            {/* Demo Credentials for Login */}
+            {}
             {isLogin && (
               <div className="bg-soft-yellow/30 rounded-lg p-4 text-sm">
                 <p className="font-medium text-gray-700 mb-1">Demo Credentials:</p>
@@ -224,7 +224,7 @@ const ParentLogin: React.FC = () => {
               </div>
             )}
 
-            {/* Toggle between Login/Register */}
+            {}
             <div className="text-center">
               <Button
                 type="button"

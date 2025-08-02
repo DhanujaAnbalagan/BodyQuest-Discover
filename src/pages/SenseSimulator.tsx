@@ -8,7 +8,7 @@ import { AudioControls } from '@/components/AudioControls';
 import { FocusToggle } from '@/components/FocusToggle';
 import { Home, Eye, Ear, Hand, Smile, Utensils } from 'lucide-react';
 
-// Import sense images
+
 import sightImage from '@/assets/senses/sight.jpg';
 import hearingImage from '@/assets/senses/hearing.jpg';
 import touchImage from '@/assets/senses/touch.jpg';

@@ -122,7 +122,7 @@ const BodyPartPuzzle: React.FC = () => {
         )}
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Puzzle Pieces */}
+          {}
           <Card className="child-friendly bg-soft-pink">
             <CardContent className="p-6">
               <h3 className="text-2xl font-bold text-gray-700 mb-6 text-center">
@@ -146,7 +146,7 @@ const BodyPartPuzzle: React.FC = () => {
             </CardContent>
           </Card>
 
-          {/* Body Outline Drop Zone */}
+          {}
           <Card className="child-friendly bg-soft-blue">
             <CardContent className="p-6">
               <h3 className="text-2xl font-bold text-white mb-6 text-center">
@@ -162,10 +162,10 @@ const BodyPartPuzzle: React.FC = () => {
                 }}
                 onDragOver={handleDragOver}
               >
-                {/* Body outline */}
+                {}
                 <div className="absolute inset-4 border-2 border-gray-400 rounded-full opacity-30"></div>
                 
-                {/* Drop zones with hints */}
+                {}
                 {puzzlePieces.map((piece) => (
                   <div
                     key={`zone-${piece.id}`}

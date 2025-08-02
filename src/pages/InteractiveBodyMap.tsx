@@ -9,7 +9,7 @@ import { AudioControls } from '@/components/AudioControls';
 import { FocusToggle } from '@/components/FocusToggle';
 import { Home } from 'lucide-react';
 
-// Import body part images
+
 import headImage from '@/assets/body-parts/head.jpg';
 import eyesImage from '@/assets/body-parts/eyes.jpg';
 import noseImage from '@/assets/body-parts/nose.jpg';
@@ -231,7 +231,7 @@ const InteractiveBodyMap: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Body Parts Grid */}
+          {}
           <div className="lg:col-span-2">
             <Card className="child-friendly bg-gradient-to-b from-sky-50 to-blue-50 border-4 border-white shadow-2xl">
               <CardContent className="p-8">
@@ -279,7 +279,7 @@ const InteractiveBodyMap: React.FC = () => {
             </Card>
           </div>
 
-          {/* Information Panel */}
+          {}
           <div>
             {selectedPart ? (
               <Card className="child-friendly bg-gradient-to-br from-yellow-50 to-orange-50 min-h-[500px] border-4 border-yellow-200 shadow-2xl">
