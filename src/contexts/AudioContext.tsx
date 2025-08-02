@@ -41,20 +41,44 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     window.speechSynthesis.cancel();
     
     const utterance = new SpeechSynthesisUtterance(text);
-    utterance.rate = 0.8;
-    utterance.pitch = 1.1;
+    utterance.rate = 0.9;
+    utterance.pitch = 1.2;
     utterance.volume = volume;
     
-    // Try to use a child-friendly voice
+    // Priority list of female voices for child-friendly narration
     const voices = window.speechSynthesis.getVoices();
-    const childVoice = voices.find(voice => 
+    const femaleVoice = voices.find(voice => 
+      // Look for specific female voices first
       voice.name.includes('Google UK English Female') || 
       voice.name.includes('Microsoft Zira') ||
-      voice.name.includes('Samantha')
+      voice.name.includes('Samantha') ||
+      voice.name.includes('Google US English Female') ||
+      voice.name.includes('Microsoft Hazel') ||
+      voice.name.includes('Karen') ||
+      voice.name.includes('Victoria') ||
+      voice.name.includes('Kate') ||
+      voice.name.includes('Fiona') ||
+      // Then look for any voice marked as female
+      (voice.name.toLowerCase().includes('female') && voice.lang.startsWith('en')) ||
+      // Look for common female voice names
+      voice.name.toLowerCase().includes('susan') ||
+      voice.name.toLowerCase().includes('mary') ||
+      voice.name.toLowerCase().includes('sarah') ||
+      voice.name.toLowerCase().includes('alice')
     );
     
-    if (childVoice) {
-      utterance.voice = childVoice;
+    if (femaleVoice) {
+      utterance.voice = femaleVoice;
+      console.log('Using female voice:', femaleVoice.name);
+    } else {
+      // Fallback: use any available female voice
+      const anyFemaleVoice = voices.find(voice => 
+        voice.lang.startsWith('en') && !voice.name.toLowerCase().includes('male')
+      );
+      if (anyFemaleVoice) {
+        utterance.voice = anyFemaleVoice;
+        console.log('Using fallback female voice:', anyFemaleVoice.name);
+      }
     }
     
     speechRef.current = utterance;
