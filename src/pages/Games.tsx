@@ -105,13 +105,13 @@ const Games: React.FC = () => {
           })}
         </div>
 
-        {/* All Games Ready Message */}
+        {/* Exciting Games Message */}
         <div className="mt-8">
           <Card className="child-friendly bg-gradient-to-r from-green-100 to-blue-100 border-4 border-green-200">
             <CardContent className="p-6 text-center">
-              <h3 className="text-xl font-bold text-soft-purple mb-2">🎉 All Games Ready to Play!</h3>
+              <h3 className="text-xl font-bold text-soft-purple mb-2">🌟 Adventure Awaits You! 🌟</h3>
               <p className="text-gray-700">
-                Four exciting educational games are now available! Challenge yourself and have fun while learning!
+                Dive into amazing challenges, solve puzzles, and become a body expert while having tons of fun!
               </p>
             </CardContent>
           </Card>

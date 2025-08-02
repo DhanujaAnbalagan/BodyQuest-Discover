@@ -233,12 +233,12 @@ const MiniQuizzes: React.FC = () => {
           })}
         </div>
 
-        {/* All Quizzes Available Info */}
+        {/* Quiz Challenge Message */}
         <div className="mt-8">
           <Card className="child-friendly bg-soft-green/30">
             <CardContent className="p-6 text-center">
-              <h3 className="text-xl font-bold text-soft-purple mb-2">🎉 All Quizzes Ready!</h3>
-              <p className="text-gray-700">All four exciting quizzes are now ready for you to enjoy and learn!</p>
+              <h3 className="text-xl font-bold text-soft-purple mb-2">🚀 Test Your Super Knowledge! 🚀</h3>
+              <p className="text-gray-700">Show off what you've learned and discover how much you really know about your amazing body!</p>
             </CardContent>
           </Card>
         </div>
