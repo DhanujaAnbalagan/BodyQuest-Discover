@@ -1,0 +1,155 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* BodyQuest Design System - Autism-Friendly Colors & Animations */
+
+@layer base {
+  :root {
+    --background: 220 15% 97%;
+    --foreground: 220 13% 18%;
+
+    --card: 220 20% 98%;
+    --card-foreground: 220 13% 18%;
+
+    --popover: 220 20% 98%;
+    --popover-foreground: 220 13% 18%;
+
+    --primary: 200 70% 75%;
+    --primary-foreground: 220 13% 18%;
+
+    --secondary: 280 30% 85%;
+    --secondary-foreground: 220 13% 18%;
+
+    --muted: 210 20% 92%;
+    --muted-foreground: 220 8% 46%;
+
+    --accent: 150 40% 80%;
+    --accent-foreground: 220 13% 18%;
+
+    --destructive: 0 50% 75%;
+    --destructive-foreground: 220 13% 18%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 200 70% 75%;
+
+    --radius: 1rem;
+    
+    /* Custom BodyQuest Colors */
+    --soft-blue: 200 70% 85%;
+    --soft-pink: 320 50% 85%;
+    --soft-green: 150 40% 80%;
+    --soft-yellow: 50 70% 85%;
+    --soft-purple: 280 30% 85%;
+    --warm-white: 220 15% 98%;
+  }
+
+  .dark {
+    --background: 220 13% 18%;
+    --foreground: 220 15% 97%;
+    --card: 220 13% 18%;
+    --card-foreground: 220 15% 97%;
+    --popover: 220 13% 18%;
+    --popover-foreground: 220 15% 97%;
+    --primary: 200 70% 65%;
+    --primary-foreground: 220 15% 97%;
+    --secondary: 280 30% 25%;
+    --secondary-foreground: 220 15% 97%;
+    --muted: 215 13% 26%;
+    --muted-foreground: 220 8% 54%;
+    --accent: 150 40% 30%;
+    --accent-foreground: 220 15% 97%;
+    --destructive: 0 50% 65%;
+    --destructive-foreground: 220 15% 97%;
+    --border: 215 13% 26%;
+    --input: 215 13% 26%;
+    --ring: 200 70% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Comic Neue', 'Segoe UI', system-ui, sans-serif;
+  }
+}
+
+/* BodyQuest Custom Styles */
+.gentle-bounce {
+  animation: gentleBounce 2s ease-in-out infinite;
+}
+
+.soft-glow {
+  box-shadow: 0 0 20px hsla(var(--primary), 0.3);
+}
+
+.focus-mode {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+}
+
+.focus-highlight {
+  box-shadow: 0 0 30px hsla(var(--accent), 0.8);
+  z-index: 1000;
+  position: relative;
+}
+
+@keyframes gentleBounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.sparkle {
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+/* Large, accessible buttons */
+.bodyquest-button {
+  @apply px-8 py-4 text-lg font-semibold rounded-2xl transition-all duration-300;
+  @apply hover:scale-105 active:scale-95;
+  min-height: 60px;
+  min-width: 120px;
+}
+
+/* Soft pastel backgrounds */
+.bg-soft-blue { background: hsl(var(--soft-blue)); }
+.bg-soft-pink { background: hsl(var(--soft-pink)); }
+.bg-soft-green { background: hsl(var(--soft-green)); }
+.bg-soft-yellow { background: hsl(var(--soft-yellow)); }
+.bg-soft-purple { background: hsl(var(--soft-purple)); }
+.bg-warm-white { background: hsl(var(--warm-white)); }
+
+/* Text colors */
+.text-soft-blue { color: hsl(200 70% 40%); }
+.text-soft-pink { color: hsl(320 50% 45%); }
+.text-soft-green { color: hsl(150 40% 40%); }
+.text-soft-purple { color: hsl(280 30% 45%); }
+
+/* Rounded, child-friendly shapes */
+.child-friendly {
+  @apply rounded-3xl shadow-lg;
+}
